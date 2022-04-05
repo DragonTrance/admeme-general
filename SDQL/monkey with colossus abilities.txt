@@ -1,0 +1,41 @@
+UPDATE * IN global.clients WHERE ckey = "YOUR CKEY HERE"
+SET
+#null = "This SDQL creates a monkey with colossus's abilities. These lines are essentially comments.",
+#null = "First, we mark our current mob, so we may work off of that. This makes it so it doesn't matter if you're a ghost or a living mob, you can still summon monke.",
+#null = mark_datum(mob),
+#null = "Now we end off this SDQL call, and continue on with the next one, separated with a semicolon."
+
+;
+
+UPDATE * IN marked
+SET
+#null = "Now we actually modify the mob we're about to create, which is a monkey. Now, we mark that, because we don't want to excessively modify our mob's variables. I know they aren't typically changed outside of admeme means, but it's nice to have cleanliness. Shit breaks less that way.",
+#null = client.mark_datum(global._new(/mob/living/carbon/human/species/monkey, [global._get_step(src, 0)]))
+
+;
+
+UPDATE * IN marked
+SET
+name = "colossus monkey",
+real_name = "colossus monkey",
+maxHealth = 2000,
+health = 2000,
+
+#null = "Start giving the monkey the abilities, disregarding the giant sprite toggle.",
+#null = "These actions are bound to the mob, and not the mind.",
+
+mock_client = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/spiral_shots, [src]),
+#null = mock_client.Grant(src),
+
+mock_client = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/spiral_shots, [src]),
+#null = mock_client.Grant(src),
+
+mock_client = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/spiral_shots, [src]),
+#null = mock_client.Grant(src),
+
+mock_client = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/spiral_shots, [src]),
+#null = mock_client.Grant(src),
+
+mock_client = null
+;
+SELECT /mob/living/carbon/human/species/monkey WHERE name = "colossus monkey"
