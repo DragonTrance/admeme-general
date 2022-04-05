@@ -1,0 +1,1 @@
+Give a user the ability to summon a projectile with the leaper frog's orb sprite projectile thingy. This orb will move towards the nearest mob from a small radius. This is just a normal lua script (hopefully) to test the limitations and how much it can provide

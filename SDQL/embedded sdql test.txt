@@ -1,0 +1,3 @@
+UPDATE * IN global.clients WHERE ckey = "dragontrance"
+SET
+mob.mock_client = global._new(/datum/callback, [world, /world/proc/SDQL2_query])

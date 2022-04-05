@@ -1,6 +1,6 @@
 UPDATE * IN global.clients WHERE ckey = "CKEY"
 SET
-#null = "This SDQL query creates a monkey with colossus's abilities. These lines are essentially comments.",
+#null = "This SDQL creates a monkey with literally every /datum/action possible, that isn't an item action, and actually does something. These lines are essentially comments.",
 #null = "First, we mark our current mob, so we may work off of that. This makes it so it doesn't matter if you're a ghost or a living mob, you can still summon monke.",
 #null = mark_datum(mob),
 #null = "Now we end off this SDQL call, and continue on with the next one, separated with a semicolon."
@@ -16,26 +16,23 @@ SET
 
 UPDATE * IN marked
 SET
-name = "colossus monkey",
-real_name = "colossus monkey",
+name = "chaos monkey",
+real_name = "chaos monkey",
 maxHealth = 2000,
 health = 2000,
 
-#null = "Start giving the monkey the abilities, disregarding the giant sprite toggle.",
-#null = "These actions are bound to the mob, and not the mind.",
-
-mock_client = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/spiral_shots, [src]),
+#null = "/cooldown/domain",
+mock_client = global._new(/datum/action/cooldown/domain, [src]),
 #null = mock_client.Grant(src),
-
-mock_client = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/random_aoe, [src]),
+#null = "/cooldown/exquisite_bunch",
+mock_client = global._new(/datum/action/cooldown/exquisite_bunch, [src]),
 #null = mock_client.Grant(src),
-
-mock_client = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/shotgun_blast, [src]),
+#null = "/cooldown/gel_cocoon",
+mock_client = global._new(/datum/action/cooldown/gel_cocoon, [src]),
 #null = mock_client.Grant(src),
-
-mock_client = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/dir_shots/alternating, [src]),
+#null = "/cooldown/metabolicboost",
+mock_client = global._new(/datum/action/cooldown/metabolicboost, [src]),
 #null = mock_client.Grant(src),
-
-mock_client = null
-;
-SELECT /mob/living/carbon/human/species/monkey WHERE name = "colossus monkey"
+#null = "/cooldown/mob_cooldown/charge/basic_charge",
+mock_client = global._new(/datum/action/cooldown/mob_cooldown/charge/basic_charge, [src]),
+#null = mock_client.Grant(src),
