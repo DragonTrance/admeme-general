@@ -1,13 +1,7 @@
-UPDATE * IN global.clients WHERE ckey = "CKEY"
-SET
-#null = "This SDQL gives the client's current mob an action defined in this SDQL query, below.",
-#null = mark_datum(mob)
-
-;
-
 UPDATE * IN marked
 SET
-mock_client = global._new(/datum/action/, [src]),
-#null = mock_client.Grant(src),
-mock_client = null
+cultslurring = global._new(/datum/action/, [src]),
+#null = cultslurring.Grant(src),
+cultslurring = 0
 ;
+SELECT * IN marked

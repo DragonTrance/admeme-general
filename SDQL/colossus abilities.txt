@@ -1,0 +1,19 @@
+UPDATE * IN marked
+SET
+cultslurring = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/spiral_shots, [src]),
+#null = cultslurring.Grant(src),
+
+cultslurring = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/random_aoe, [src]),
+#null = cultslurring.Grant(src),
+
+cultslurring = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/shotgun_blast, [src]),
+#null = cultslurring.Grant(src),
+
+cultslurring = global._new(/datum/action/cooldown/mob_cooldown/projectile_attack/dir_shots/alternating, [src]),
+#null = cultslurring.Grant(src),
+
+cultslurring = 0
+;
+SELECT * IN marked
+
+//UPDATE /mob/living WHERE z == 1
